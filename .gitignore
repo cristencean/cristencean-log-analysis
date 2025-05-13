@@ -1,0 +1,61 @@
+# User-specific files
+.idea/
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer Files
+*.exe
+*.dll
+
+# Windows Installer files
+*.vspscc
+.vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows Installer files
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ebug-/
+
+# Windows Installer files
+[Dd]ist/
+[Dd]ist-/
+
+# Windows Installer files
+bin/
+obj/
+out/
+build/
+publish/
+
+# Windows Installer files
+App_Data/
+
+# DotNetCore specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.suo
+
+# .NET Core generated files
+.vscode/
