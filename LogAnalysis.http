@@ -1,0 +1,6 @@
+@LogAnalysis_HostAddress = http://localhost:5211
+
+GET {{LogAnalysis_HostAddress}}/api/loganalysis
+Accept: application/json
+
+###
