@@ -1,3 +1,4 @@
+using LogAnalysis.Models;
 using LogAnalysis.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<LogProcessorService>();
+builder.Services.AddSingleton<IFileReaderModel, FileReaderModel>();
 
 var app = builder.Build();
 
