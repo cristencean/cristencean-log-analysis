@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace LogAnalysis.Services;
 
-public class LogProcessorService
+public class LogProcessorService: ILogProcessorService
 {
     private readonly IFileReaderModel _fileReader;
     private readonly string LOG_FILE_PATH = "logs/webrtc_studio.log";
