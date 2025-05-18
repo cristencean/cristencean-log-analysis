@@ -6,6 +6,12 @@
 
 The Log Analyser is an app that reads log data from a server and returns a proper json report.
 
+## Run the unit testing
+
+To run the unit testing just type `dotnet test`:
+
+    dotnet test
+
 ## Running locally in development mode
 
 To get started, just clone the repository and run `dotnet restore & dotnet build & dotnet run`:

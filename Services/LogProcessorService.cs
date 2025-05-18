@@ -4,20 +4,26 @@ using System.Text.RegularExpressions;
 
 namespace LogAnalysis.Services;
 
-public class LogProcessorService
+public class LogProcessorService: ILogProcessorService
 {
+    private readonly IFileReaderModel _fileReader;
     private readonly string LOG_FILE_PATH = "logs/webrtc_studio.log";
     private readonly string USER_JOIN = "USER_JOIN";
     private readonly string USER_LEAVE = "USER_LEAVE";
 
+    public LogProcessorService(IFileReaderModel fileReader)
+    {
+        _fileReader = fileReader;
+    }
+
     public LogAnalysisApiModel ProcessLog()
     {
-        if (!File.Exists(LOG_FILE_PATH))
+        if (!_fileReader.Exists(LOG_FILE_PATH))
         {
             throw new FileNotFoundException("Log file not found.");
         }
 
-        var logRows = File.ReadAllLines(LOG_FILE_PATH);
+        var logRows = _fileReader.ReadAllLines(LOG_FILE_PATH);
         var logRegex = new Regex(@"\[(.*?)\]\s+(\w+)\s+(\d+)\s+.*");
         var result = new LogAnalysisApiModel();
         var allUserIds = new List<int>();

@@ -1,3 +1,4 @@
+using LogAnalysis.Models;
 using LogAnalysis.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +8,9 @@ namespace LogAnalysis.Controllers
     [Route("api/loganalysis")]
     public class LogAnalysisApiController : ControllerBase
     {
-        private readonly LogProcessorService _logProcessorService;
+        private readonly ILogProcessorService _logProcessorService;
 
-        public LogAnalysisApiController(LogProcessorService logProcessorService)
+        public LogAnalysisApiController(ILogProcessorService logProcessorService)
         {
             _logProcessorService = logProcessorService;
         }
@@ -25,10 +26,10 @@ namespace LogAnalysis.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new
+                return StatusCode(500, new ErrorResponseModel()
                 {
-                    message = "An error occurred while processing the log data.",
-                    error = ex.Message
+                    Message = "An error occurred while processing the log data.",
+                    Error = ex.Message
                 });
             }
         }
